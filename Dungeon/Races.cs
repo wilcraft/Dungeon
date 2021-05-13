@@ -55,6 +55,18 @@ namespace Dungeon
                     return new RacialModifiers(100, 2, 2);
                 case RaceKind.HalfElf:
                     return new RacialModifiers(75, 1, 3);
+                case RaceKind.Elf:
+                    return new RacialModifiers(85, 0, 4);
+                case RaceKind.Orc:
+                    return new RacialModifiers(115, 2, 7);
+                case RaceKind.Gnome:
+                    return new RacialModifiers(60, 3, 2);
+                case RaceKind.Skeleton:
+                    return new RacialModifiers(75, 3, 0);
+                case RaceKind.Dwarf:
+                    return new RacialModifiers(100, 2, 2);
+                case RaceKind.Goblin:
+                    return new RacialModifiers(50, 1, 1);
                 default:
                     return new RacialModifiers(0,0,0);
             }
