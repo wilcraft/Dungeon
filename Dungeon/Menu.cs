@@ -12,17 +12,17 @@ namespace Dungeon
             var Input = Console.ReadLine().ToUpper();
             var character = Input == "Y" ? "Select a race:" : Input == "N" ? "Farewell." : "";
             Console.WriteLine(character);
-            Player();
+            PlayerCreation();
         }
-        public void Player()
+        public void PlayerCreation()
         {
             foreach (var race in Races.GetPlayableRaces())
             {
                 Console.WriteLine(Races.RaceKindToString(race));
             }
-            Selectrace();
+            SelectRace();
         }
-        public void Selectrace()
+        public void SelectRace()
         {
             String Input = Console.ReadLine().ToUpper();
             Races.RacialModifiers stats;
