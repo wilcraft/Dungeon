@@ -16,6 +16,8 @@ namespace Dungeon
     }
     class Races
     {
+        static RaceKind[] PlayableRaces = {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
+        static RaceKind[] EnemyRaces = {RaceKind.Skeleton, RaceKind.Dwarf, RaceKind.Goblin};
         public struct RacialModifiers {
             int health;
             int attack;
@@ -127,10 +129,10 @@ namespace Dungeon
         }
         public static RaceKind[] EnemyNPCRaceTypes()
         {
-            return new RaceKind[] { RaceKind.Skeleton, RaceKind.Dwarf, RaceKind.Goblin };
+            return PlayableRaces;
         }
         public static RaceKind[] GetPlayableRaces() {
-            return new RaceKind[] {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
+            return EnemyRaces;
         }
         public struct BaseEnemyKind
         {
