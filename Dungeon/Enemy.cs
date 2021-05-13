@@ -6,20 +6,6 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
-    public static class StaticRandom
-    {
-        private static int seed;
-
-        private static ThreadLocal<Random> threadLocal = new ThreadLocal<Random>
-            (() => new Random(Interlocked.Increment(ref seed)));
-
-        static StaticRandom()
-        {
-            seed = Environment.TickCount;
-        }
-
-        public static Random Instance { get { return threadLocal.Value; } }
-    }
     class Enemy
     {
         static async Task Main(string[] args)
@@ -51,6 +37,7 @@ namespace Dungeon
                     var input = Console.ReadLine();
                     var confirmation = input == "Y" ? "You're now Human!" : input == "N" ? "" : "";
                     break;
+
                 default:
                     Console.WriteLine("Wrong input!");
                     break;
