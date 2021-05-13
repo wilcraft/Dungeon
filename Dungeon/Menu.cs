@@ -22,35 +22,27 @@ namespace Dungeon
             String[] PlayerRace = { "Human", "Half-Elf", "Elf", "Orc", "Gnome" };
             foreach (var race in PlayerRace)
             {
-                Console.WriteLine(race.ToString());
+                Console.WriteLine(race);
             }
-            String CharacterRace = Console.ReadLine();
-            while (CharacterRace != "N")
+            while (true)
             {
                 String Input = Console.ReadLine().ToUpper();
-                if (Input == "Human")
-                {
-                    Race.Human();
-                }
-                else if (Input == "Half-Elf")
-                {
-                    Race.HalfElf();
-                }
-                else if (Input == "Elf")
-                {
-                    Race.Elf();
-                }
-                else if (Input == "Orc")
-                {
-                    Race.Orc();
-                }
-                else if (Input == "Gnome")
-                {
-                    Race.Gnome();
-                }
-                else if (Input == "N")
-                {
-                    CharacterRace = "N";
+                switch (Input) {
+                    case "HUMAN":
+                        Race.GetRacialModifier(RaceKind.Human);
+                        break;
+                    case "HALF-ELF":
+                        Race.GetRacialModifier(RaceKind.HalfElf);
+                        break;
+                    case "ELF":
+                        Race.GetRacialModifier(RaceKind.Elf);
+                        break;
+                    case "ORC":
+                        Race.GetRacialModifier(RaceKind.Orc);
+                        break;
+                    case "GNOME":
+                        Race.GetRacialModifier(RaceKind.Gnome);
+                        break;
                 }
             }
         }
