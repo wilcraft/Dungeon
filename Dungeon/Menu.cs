@@ -26,35 +26,40 @@ namespace Dungeon
             while (true)
             {
                 String Input = Console.ReadLine().ToUpper();
+                Races.RacialModifiers stats;
                 switch (Input) {
                     case "HUMAN":
-                        Race.GetRacialModifier(RaceKind.Human);
+                        stats = Race.GetRacialModifier(RaceKind.Human);
                         break;
                     case "HALF-ELF":
-                        Race.GetRacialModifier(RaceKind.HalfElf);
+                        stats = Race.GetRacialModifier(RaceKind.HalfElf);
                         break;
                     case "ELF":
-                        Race.GetRacialModifier(RaceKind.Elf);
+                        stats = Race.GetRacialModifier(RaceKind.Elf);
                         break;
                     case "ORC":
-                        Race.GetRacialModifier(RaceKind.Orc);
+                        stats = Race.GetRacialModifier(RaceKind.Orc);
                         break;
                     case "GNOME":
-                        Race.GetRacialModifier(RaceKind.Gnome);
+                        stats = Race.GetRacialModifier(RaceKind.Gnome);
                         break;
                     case "SKELETON":
                         Race.GetRaceName(RaceKind.Skeleton);
-                        Race.GetRacialModifier(RaceKind.Skeleton);
+                        stats = Race.GetRacialModifier(RaceKind.Skeleton);
                         break;
                     case "DWARF":
                         Race.GetRaceName(RaceKind.Dwarf);
-                        Race.GetRacialModifier(RaceKind.Dwarf);
+                        stats = Race.GetRacialModifier(RaceKind.Dwarf);
                         break;
                     case "GOBLIN":
                         Race.GetRaceName(RaceKind.Goblin);
-                        Race.GetRacialModifier(RaceKind.Goblin);
+                        stats = Race.GetRacialModifier(RaceKind.Goblin);
+                        break;
+                    default:
+                        stats = Race.GetRacialModifier(RaceKind.Human);
                         break;
                 }
+                Console.WriteLine($"You have {stats.GetAttackModifier()} attack, {stats.GetArmorModifier()} armor and {stats.GetHealthModifier()} health");
             }
         }
     }
