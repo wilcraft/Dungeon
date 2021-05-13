@@ -16,10 +16,9 @@ namespace Dungeon
         }
         public void Player()
         {
-            Races Race = new Races();
-            foreach (var race in Race.GetPlayableRaces())
+            foreach (var race in Races.GetPlayableRaces())
             {
-                Console.WriteLine(Race.RaceKindToString(race));
+                Console.WriteLine(Races.RaceKindToString(race));
             }
             Selectrace();
         }

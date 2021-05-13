@@ -40,7 +40,7 @@ namespace Dungeon
             }
 
         }
-        public String RaceKindToString(RaceKind race) {
+        public static String RaceKindToString(RaceKind race) {
             switch (race) {
                 case RaceKind.Human:
                     return "Human";
@@ -63,7 +63,7 @@ namespace Dungeon
             }
         }
 
-        public RaceKind StringToRaceKind(string race) {
+        public static RaceKind StringToRaceKind(string race) {
             switch (race.ToUpper()) {
                 case "HUMAN":
                     return RaceKind.Human;
@@ -86,7 +86,7 @@ namespace Dungeon
             }
         }
 
-        public RacialModifiers GetRacialModifier(RaceKind race) {
+        public static RacialModifiers GetRacialModifier(RaceKind race) {
             switch (race) {
                 case RaceKind.Human:
                     return new RacialModifiers(100, 2, 2);
@@ -108,7 +108,7 @@ namespace Dungeon
                     return new RacialModifiers(0,0,0);
             }
         }
-        public void GetRaceName(RaceKind name)
+        public static void GetRaceName(RaceKind name)
         {
             switch (name)
             {
@@ -127,11 +127,11 @@ namespace Dungeon
             }
                 
         }
-        public RaceKind[] EnemyNPCRaceTypes()
+        public static RaceKind[] EnemyNPCRaceTypes()
         {
             return new RaceKind[] { RaceKind.Skeleton, RaceKind.Dwarf, RaceKind.Goblin };
         }
-        public RaceKind[] GetPlayableRaces() {
+        public static RaceKind[] GetPlayableRaces() {
             return new RaceKind[] {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
         }
     }
