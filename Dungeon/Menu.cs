@@ -66,18 +66,32 @@ namespace Dungeon
         public void Adventure()
         {
             Console.WriteLine("What do you wish to do?");
-            Commands Usable = new Commands();
-            foreach (var usableaction in Usable.GetUsableCommands)
+            foreach (var availableaction in Commands.GetUsableCommands())
             {
-                {
-                    Console.WriteLine();
-                }
+                Console.WriteLine(availableaction.ToString());
             }
+            Actions();
         }
         public void Actions()
         {
-            Commands command = new Commands();
-            command.Action(command.StringtoAction(Console.ReadLine()));
+            var action = Commands.Action(Commands.StringtoAction(Console.ReadLine().ToUpper()));
+            switch (action)
+            {
+                case "WALK":
+                    Commands.GetUsableCommands(Commands.CommandKind.Sit);
+                    break;
+                case "SIT":
+
+                    break;
+                case "SLEEP":
+
+                    break;
+                default:
+                    Console.WriteLine("Wrong Input!");
+                    break;
+            }
+            //counter encounter = new Encounter();
+            //encounter.EncounterEngine();
         }
     }
 }

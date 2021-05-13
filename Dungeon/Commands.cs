@@ -14,7 +14,7 @@ namespace Dungeon
             Sit,
             Sleep
         }
-        public String Action(CommandKind command)
+        public static String Action(CommandKind command)
         {
             switch (command)
             {
@@ -28,7 +28,7 @@ namespace Dungeon
                     return "Undefined";
             }
         }
-        public CommandKind StringtoAction(string move)
+        public static CommandKind StringtoAction(string move)
         {
             switch (move.ToUpper())
             {
@@ -42,7 +42,7 @@ namespace Dungeon
                     return CommandKind.Walk;
             }
         }
-        public CommandKind[] GetUsableCommands()
+        public static CommandKind[] GetUsableCommands()
         {
             return new CommandKind[] { CommandKind.Sit, CommandKind.Sleep, CommandKind.Walk};
         }

@@ -8,7 +8,8 @@ namespace Dungeon
 {
     class Encounter
     {
-        static void EncounterEngine()
+        
+        public void EncounterEngine()
         {
             var Encounterchance = StaticRandom.Instance.Next(1, 101);
             if (Encounterchance > 75)
@@ -19,10 +20,5 @@ namespace Dungeon
                 }
             }
         }
-
-        //public string ChancetoEncounter(RaceKind race)
-        //{
-         
-        //}
     }
 }
