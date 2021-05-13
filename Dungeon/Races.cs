@@ -14,7 +14,7 @@ namespace Dungeon
     }
     class Races
     {
-        public String RaceKindAsString(RaceKind race) {
+        public String RaceKindToString(RaceKind race) {
             switch (race) {
                 case RaceKind.Human:
                     return "Human";
