@@ -20,5 +20,10 @@ namespace Dungeon
                 }
             }
         }
+
+        //public string ChancetoEncounter(RaceKind race)
+        //{
+         
+        //}
     }
 }

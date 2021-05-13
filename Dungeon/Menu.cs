@@ -62,5 +62,9 @@ namespace Dungeon
                 Console.WriteLine($"You have {stats.GetAttackModifier()} attack, {stats.GetArmorModifier()} armor and {stats.GetHealthModifier()} health");
             }
         }
+        public void Actions()
+        {
+
+        }
     }
 }
