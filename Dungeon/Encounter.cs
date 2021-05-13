@@ -10,13 +10,12 @@ namespace Dungeon
     {
         static void EncounterEngine()
         {
-            Races Race = new Races();
             var Encounterchance = StaticRandom.Instance.Next(1, 101);
             if (Encounterchance > 75)
             {
-                foreach (var name in Race.EnemyNPCRaceTypes())
+                foreach (var name in Races.EnemyNPCRaceTypes())
                 {
-                    Console.WriteLine(Race.RaceKindToString(name));
+                    Console.WriteLine(Races.RaceKindToString(name));
                 }
             }
         }
