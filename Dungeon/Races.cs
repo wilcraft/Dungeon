@@ -4,42 +4,52 @@ using System.Text;
 
 namespace Dungeon
 {
+
+    public enum RaceKind {
+        Human,
+        HalfElf,
+        Elf,
+        Orc,
+        Gnome
+    }
     class Races
     {
-        public void Human() 
-        {
-            var health = 100;
-            var armor = 2;
-            var attack = 2;
-            Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
-        }
-        public void HalfElf()
-        {
-            var health = 75;
-            var armor = 1;
-            var attack = 3;
-            Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
-        }
-        public void Elf()
-        {
-            var health = 85;
-            var armor = 0;
-            var attack = 4;
-            Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
-        }
-        public void Orc()
-        {
-            var health = 115;
-            var armor = 2;
-            var attack = 7;
-            Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
-        }
-        public void Gnome()
-        {
-            var health = 60;
-            var armor = 3;
-            var attack = 2;
-            Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
+        public void GetRacialModifier(RaceKind race) {
+            int health;
+            int armor;
+            int attack;
+            switch (race) {
+                case RaceKind.Human:
+                    health = 100;
+                    armor = 2;
+                    attack = 2;
+                    Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
+                    break;
+                case RaceKind.HalfElf:
+                    health = 75;
+                    armor = 1;
+                    attack = 3;
+                    Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
+                    break;
+                case RaceKind.Elf:
+                    health = 85;
+                    armor = 0;
+                    attack = 4;
+                    Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
+                    break;
+                case RaceKind.Orc:
+                    health = 115;
+                    armor = 2;
+                    attack = 7;
+                    Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
+                    break;
+                case RaceKind.Gnome:
+                    health = 60;
+                    armor = 3;
+                    attack = 2;
+                    Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
+                    break;
+            }
         }
     }
 }
