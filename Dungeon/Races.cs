@@ -26,6 +26,19 @@ namespace Dungeon
                 this.armor = arm;
                 this.attack = atk;
             }
+
+            public int GetHealthModifier() {
+                return this.health;
+            }
+            
+            public int GetArmorModifier() {
+                return this.armor;
+            }
+
+            public int GetAttackModifier() {
+                return this.attack;
+            }
+
         }
         public String RaceKindToString(RaceKind race) {
             switch (race) {
@@ -49,6 +62,30 @@ namespace Dungeon
                     return "Undefined";
             }
         }
+
+        public RaceKind StringToRaceKind(string race) {
+            switch (race.ToUpper()) {
+                case "HUMAN":
+                    return RaceKind.Human;
+                case "HALF-ELF":
+                    return RaceKind.HalfElf;
+                case "ELF":
+                    return RaceKind.Elf;
+                case "ORC":
+                    return RaceKind.Orc;
+                case "GNOME":
+                    return RaceKind.Gnome;
+                case "DWARF":
+                    return RaceKind.Dwarf;
+                case "SKELETON":
+                    return RaceKind.Skeleton;
+                case "GOBLIN":
+                    return RaceKind.Goblin;
+                default:
+                    return RaceKind.Human;
+            }
+        }
+
         public RacialModifiers GetRacialModifier(RaceKind race) {
             switch (race) {
                 case RaceKind.Human:
