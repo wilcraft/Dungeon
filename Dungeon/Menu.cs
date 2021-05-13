@@ -19,10 +19,9 @@ namespace Dungeon
         public void Player()
         {
             Races Race = new Races();
-            String[] PlayerRace = { "Human", "Half-Elf", "Elf", "Orc", "Gnome" };
-            foreach (var race in PlayerRace)
+            foreach (var race in Race.GetPlayableRaces())
             {
-                Console.WriteLine(race);
+                Console.WriteLine(Race.RaceKindToString(race));
             }
             while (true)
             {
