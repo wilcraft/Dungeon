@@ -10,7 +10,10 @@ namespace Dungeon
         HalfElf,
         Elf,
         Orc,
-        Gnome
+        Gnome,
+        Dwarf,
+        Skeleton,
+        Goblin
     }
     class Races
     {
@@ -49,7 +52,39 @@ namespace Dungeon
                     attack = 2;
                     Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
                     break;
+                case RaceKind.Skeleton:
+                    health = 75;
+                    break;
+                case RaceKind.Dwarf:
+                    health = 100;
+                    break;
+                case RaceKind.Goblin:
+                    health = 50;
+                    break;
+
             }
+        }
+        public void GetRaceName(RaceKind name)
+        {
+            switch (name)
+            {
+                case RaceKind.Skeleton:
+                    String[] SkeletonBaseName = { "Indiana Bones", "Lazy Bonez", "Edward", "Dee Ceased", "Leboneski" };
+                    int IndexSkeleton = StaticRandom.Instance.Next(SkeletonBaseName.Length);
+                    Console.WriteLine($"{SkeletonBaseName[IndexSkeleton]} the {RaceKind.Skeleton} has appeared! ");
+                    break;
+                case RaceKind.Dwarf:
+                    String[] DwarfBaseName = { "Nodreat", "Kisdras", "Reistoud", "Brundrek", "Thebaeck" };
+                    int IndexDwarf = StaticRandom.Instance.Next(DwarfBaseName.Length);
+                    Console.WriteLine($"{DwarfBaseName[IndexDwarf]} the {RaceKind.Dwarf} has appeared! ");
+                    break;
+                case RaceKind.Goblin:
+                    String[] GoblinBaseName = { "Talk", "Zyskasb", "Zearark", "Srazz", "Klimirm" };
+                    int IndexGoblin = StaticRandom.Instance.Next(GoblinBaseName.Length);
+                    Console.WriteLine($"{GoblinBaseName[IndexGoblin]} the {RaceKind.Goblin} has appeared! ");
+                    break;
+            }
+                
         }
     }
 }

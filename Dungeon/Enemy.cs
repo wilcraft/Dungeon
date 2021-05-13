@@ -16,26 +16,7 @@ namespace Dungeon
         public void EnemyTypes()
         {
             string[] EnemyNPCType = { "Goblin", "Skeleton", "Dwarf" };
-            String[] DwarfBaseName = { "Nodreat", "Kisdras", "Reistoud", "Brundrek", "Thebaeck" };
-            String[] SkeletonBaseName = { "Indiana Bones", "Lazy Bonez", "Edward", "Dee Ceased", "Leboneski" };
-            String[] GoblinBaseName = { "Talk", "Zyskasb", "Zearark", "Srazz", "Klimirm" };
             int Index = StaticRandom.Instance.Next(EnemyNPCType.Length);
-            int IndexDwarf = StaticRandom.Instance.Next(DwarfBaseName.Length);
-            int IndexSkeleton = StaticRandom.Instance.Next(SkeletonBaseName.Length);
-            int IndexGoblin = StaticRandom.Instance.Next(GoblinBaseName.Length);
-            if (EnemyNPCType[Index] == "Goblin")
-            {
-                Console.WriteLine($"{GoblinBaseName[IndexGoblin]} the {EnemyNPCType[Index]} has appeared! ");
-            }
-            else if (EnemyNPCType[Index] == "Skeleton")
-            {
-                Console.WriteLine($"{SkeletonBaseName[IndexSkeleton]} the {EnemyNPCType[Index]} has appeared! ");
-            }
-            else if (EnemyNPCType[Index] == "Dwarf")
-            {
-                Console.WriteLine($"{DwarfBaseName[IndexDwarf]} the {EnemyNPCType[Index]} has appeared! ");
-            }
-
             if (EnemyNPCType[Index] == "Goblin")
             {
                 var health = 50;
