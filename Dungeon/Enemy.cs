@@ -8,7 +8,6 @@ namespace Dungeon
 {
     class Enemy
     {
-
         public static void Main(string[] args)
         {
             Menu Creation = new Menu();

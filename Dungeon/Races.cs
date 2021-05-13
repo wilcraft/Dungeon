@@ -8,16 +8,13 @@ namespace Dungeon
     {
         public void Human() 
         {
-            Races HumanStats = new Races();
             var health = 100;
             var armor = 2;
             var attack = 2;
             Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
-            
         }
         public void HalfElf()
         {
-            Races HalfElfStats = new Races();
             var health = 75;
             var armor = 1;
             var attack = 3;
@@ -25,7 +22,6 @@ namespace Dungeon
         }
         public void Elf()
         {
-            Races ElfStats = new Races();
             var health = 85;
             var armor = 0;
             var attack = 4;
@@ -33,7 +29,6 @@ namespace Dungeon
         }
         public void Orc()
         {
-            Races OrcStats = new Races();
             var health = 115;
             var armor = 2;
             var attack = 7;
@@ -41,7 +36,6 @@ namespace Dungeon
         }
         public void Gnome()
         {
-            Races GnomeStats = new Races();
             var health = 60;
             var armor = 3;
             var attack = 2;

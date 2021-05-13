@@ -52,10 +52,6 @@ namespace Dungeon
                 {
                     CharacterRace = "N";
                 }
-                //var race = Input == "Human" ? Races.Human :
-                //    Input == "Half-Elf" ? Races.HalfElf :
-                //    Input == "Elf" ? Races.Elf :
-                //    Input == "Orc" ? Races.Orc :;
             }
         }
     }
