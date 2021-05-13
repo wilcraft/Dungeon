@@ -4,12 +4,17 @@ using System.Text;
 
 namespace Dungeon
 {
-    class Menu : Commands
+    class Menu
     {
+        public static void Main(string[] args) {
+            Menu menu = new Menu();
+            menu.BeginCreation();
+        }
         public void BeginCreation()
         {
             Console.WriteLine("Would you like to create a character? Y/N");
             var Input = Console.ReadLine().ToUpper();
+            Console.Clear();
             var character = Input == "Y" ? "Select a race:" : Input == "N" ? "Farewell." : "";
             Console.WriteLine(character);
             PlayerCreation();
@@ -65,38 +70,16 @@ namespace Dungeon
         }
         public void Adventure()
         {
-            Console.WriteLine("What do you wish to do?");
-            foreach (var availableaction in Commands.GetUsableCommands())
-            {
-                Console.WriteLine(availableaction.ToString());
-            }
+            Console.WriteLine("What do you wish to do?\n" +
+                              "Walk, Sit, Sleep?");
             SelectAction();
         }
         public void SelectAction()
         {
-            String Input = Console.ReadLine(); ;
-            switch (Input.ToUpper())
-            {
-                case "WALK":
-                    Console.WriteLine(ActionToString(CommandKind.Walk));
-                    SelectAction();
-                    break;
-                case "SIT":
-                    Console.WriteLine(ActionToString(CommandKind.Sit));
-                    Encounter encounter = new Encounter();
-                    encounter.EncounterEngine();
-                    break;
-                case "SLEEP":
-                    Console.WriteLine(ActionToString(CommandKind.Sleep));
-                    SelectAction();
-                    break;
-                case "END":
-                    Console.WriteLine(ActionToString(CommandKind.End));
-                    break;
-                default:
-                    Console.WriteLine("Wrong Input!");
-                    SelectAction();
-                    break;
+            while (true) {
+                String Input = Console.ReadLine();
+                Parser parser = new Parser();
+                parser.Parse(Input);
             }
         }
     }

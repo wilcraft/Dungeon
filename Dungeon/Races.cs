@@ -129,48 +129,10 @@ namespace Dungeon
         }
         public static RaceKind[] EnemyNPCRaceTypes()
         {
-            return PlayableRaces;
-        }
-        public static RaceKind[] GetPlayableRaces() {
             return EnemyRaces;
         }
-        public struct BaseEnemyKind
-        {
-            string SkeletonKind;
-            string GoblinKind;
-            string DwarfKind;
-            public BaseEnemyKind(string skeleton,string goblin,string dwarf)
-            {
-                this.SkeletonKind = skeleton;
-                this.GoblinKind = goblin;
-                this.DwarfKind = dwarf;
-            }
-            public String GetSkeletonType()
-            {
-                return this.SkeletonKind;
-            }
-            public string GetGoblinType()
-            {
-                return this.GoblinKind;
-            }
-            public string GetDwarfKind()
-            {
-                return this.DwarfKind;
-            }
-        }
-        public static BaseEnemyKind RandomEnemyKind(RaceKind race)
-        {
-            switch (race)
-            {
-                case RaceKind.Skeleton:
-                    return new BaseEnemyKind();
-                case RaceKind.Dwarf:
-                    return new BaseEnemyKind();
-                case RaceKind.Goblin:
-                    return new BaseEnemyKind();
-                default:
-                    return new BaseEnemyKind();
-            }
+        public static RaceKind[] GetPlayableRaces() {
+            return PlayableRaces;
         }
     }
 }

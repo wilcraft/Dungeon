@@ -8,10 +8,14 @@ namespace Dungeon
 {
     class Enemy
     {
-        public static void Main(string[] args)
-        {
-            Menu Creation = new Menu();
-            Creation.BeginCreation();
+        private RaceKind race;
+
+        public RaceKind GetRace() {
+            return race;
+        }
+
+        public void SetRace(RaceKind NewRace) {
+            this.race = NewRace;
         }
     }
 }

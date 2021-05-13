@@ -11,13 +11,9 @@ namespace Dungeon
         
         public void EncounterEngine()
         {
-            Races.BaseEnemyKind types;
             var Encounterchance = StaticRandom.Instance.Next(1, 101);
-                switch (Encounterchance > 75)
-            {
-            }
-            Console.WriteLine(Encounterchance);
-            SelectAction();
+            if (Encounterchance > 75) {}
+
         }
     }
 }
