@@ -18,10 +18,10 @@ namespace Dungeon
     {
         public struct RacialModifiers {
             int health;
-            int armor;
             int attack;
+            int armor;
 
-            public RacialModifiers(int hp, int arm, int atk) {
+            public RacialModifiers(int hp, int atk, int arm) {
                 this.health = hp;
                 this.armor = arm;
                 this.attack = atk;
@@ -126,6 +126,10 @@ namespace Dungeon
                     break;
             }
                 
+        }
+        public RaceKind[] EnemyNPCRaceTypes()
+        {
+            return new RaceKind[] { RaceKind.Skeleton, RaceKind.Dwarf, RaceKind.Goblin };
         }
         public RaceKind[] GetPlayableRaces() {
             return new RaceKind[] {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};

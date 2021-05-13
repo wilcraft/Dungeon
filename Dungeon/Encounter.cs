@@ -14,11 +14,10 @@ namespace Dungeon
             var Encounterchance = StaticRandom.Instance.Next(1, 101);
             if (Encounterchance > 75)
             {
-                foreach (var name in Race.GetRaceName())
+                foreach (var name in Race.EnemyNPCRaceTypes())
                 {
-                    Console.WriteLine(Race.GetRaceName(name));
+                    Console.WriteLine(Race.RaceKindToString(name));
                 }
-
             }
         }
     }
