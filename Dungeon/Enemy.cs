@@ -8,23 +8,28 @@ namespace Dungeon
 {
     class Enemy
     {
-        static async Task Main(string[] args)
+
+        public static void Main(string[] args)
         {
-            await BeginCreation();
+            Enemy Creation = new Enemy(); 
+            Creation.BeginCreation();
         }
-        static async Task BeginCreation()
+        public void BeginCreation()
         {
+            Enemy Player = new Enemy();
             Console.WriteLine("Would you like to create a character? Y/N");
-            var Input = Console.ReadLine();
+            var Input = Console.ReadLine().ToUpper();
             var character = Input == "Y" ? "Select a race:" : Input == "N" ? "Farewell." : "";
             Console.WriteLine(character);
-            await Wait();
+            Player.Player();
         }
-        static async Task Player()
+        public void Player()
         {
             String[] PlayerRace = { "Human", "Half-Elf", "Elf", "Orc", "Gnome" };
-            int IndexRace = PlayerRace.Length;
-            Console.WriteLine(PlayerRace[IndexRace]);// gurmi tuk za nqkva prichina???
+            foreach (var race in PlayerRace)
+            {
+                Console.WriteLine(race.ToString());
+            }
             String CharacterRace = Console.ReadLine();
             switch (CharacterRace)
             {
@@ -35,21 +40,17 @@ namespace Dungeon
                     Console.WriteLine($"You have {health} health points, {attack} attack damage and {armor} armor points!");
                     Console.WriteLine("Are you sure about your choice? Y/N");
                     var input = Console.ReadLine();
-                    var confirmation = input == "Y" ? "You're now Human!" : input == "N" ? "" : "";
+                    var confirmation = input == "Y" ? "You're now Human!" : "";
                     break;
 
                 default:
                     Console.WriteLine("Wrong input!");
+                    var Input = Console.ReadLine();
                     break;
+
             }
-        }
-        static async Task Wait()
-            //tva se prevrushta v memory leak poradi constant running
-            //do smth about it pls
-        {
-            await Task.Run(Wait);
-        }
-            static async Task EnemyTypes()
+
+            public void EnemyTypes()
         {
             string[] EnemyNPCType = { "Goblin", "Skeleton", "Dwarf" };
             String[] DwarfBaseName = { "Nodreat", "Kisdras", "Reistoud", "Brundrek", "Thebaeck" };
@@ -93,7 +94,6 @@ namespace Dungeon
                 var armor = StaticRandom.Instance.Next(1, 3);
                 Console.WriteLine($"They have: {health} health points, {attack} attack damage and {armor} armor points!");
             }
-            await EnemyTypes();
         }
     }
 }
