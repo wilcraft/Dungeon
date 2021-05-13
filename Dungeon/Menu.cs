@@ -43,6 +43,18 @@ namespace Dungeon
                     case "GNOME":
                         Race.GetRacialModifier(RaceKind.Gnome);
                         break;
+                    case "SKELETON":
+                        Race.GetRaceName(RaceKind.Skeleton);
+                        Race.GetRacialModifier(RaceKind.Skeleton);
+                        break;
+                    case "DWARF":
+                        Race.GetRaceName(RaceKind.Dwarf);
+                        Race.GetRacialModifier(RaceKind.Dwarf);
+                        break;
+                    case "GOBLIN":
+                        Race.GetRaceName(RaceKind.Goblin);
+                        Race.GetRacialModifier(RaceKind.Goblin);
+                        break;
                 }
             }
         }

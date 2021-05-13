@@ -70,12 +70,21 @@ namespace Dungeon
                     break;
                 case RaceKind.Skeleton:
                     health = 75;
+                    attack = StaticRandom.Instance.Next(3, 5);
+                    armor = StaticRandom.Instance.Next(0, 12);
+                    Console.WriteLine($"They have: {health} health points, {attack} attack damage and {armor} armor points!");
                     break;
                 case RaceKind.Dwarf:
                     health = 100;
+                    attack = StaticRandom.Instance.Next(2, 4);
+                    armor = StaticRandom.Instance.Next(1, 3);
+                    Console.WriteLine($"They have: {health} health points, {attack} attack damage and {armor} armor points!");
                     break;
                 case RaceKind.Goblin:
                     health = 50;
+                    attack = StaticRandom.Instance.Next(1, 6);
+                    armor = StaticRandom.Instance.Next(0, 2);
+                    Console.WriteLine($"They have: {health} health points, {attack} attack damage and {armor} armor points!");
                     break;
 
             }
