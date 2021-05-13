@@ -90,7 +90,6 @@ namespace Dungeon
             }
                 
         }
-
         public RaceKind[] GetPlayableRaces() {
             return new RaceKind[] {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
         }

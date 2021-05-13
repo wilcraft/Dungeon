@@ -55,6 +55,7 @@ namespace Dungeon
                         Race.GetRacialModifier(RaceKind.Goblin);
                         break;
                 }
+
             }
         }
     }
