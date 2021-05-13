@@ -26,7 +26,6 @@ namespace Dungeon
                 this.armor = arm;
                 this.attack = atk;
             }
-
             public int GetHealthModifier() {
                 return this.health;
             }
@@ -125,7 +124,6 @@ namespace Dungeon
                     Console.WriteLine($"{GoblinBaseName[StaticRandom.Instance.Next(GoblinBaseName.Length)]} the {RaceKind.Goblin} has appeared! ");
                     break;
             }
-                
         }
         public static RaceKind[] EnemyNPCRaceTypes()
         {
@@ -133,6 +131,44 @@ namespace Dungeon
         }
         public static RaceKind[] GetPlayableRaces() {
             return new RaceKind[] {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
+        }
+        public struct BaseEnemyKind
+        {
+            string SkeletonKind;
+            string GoblinKind;
+            string DwarfKind;
+            public BaseEnemyKind(string skeleton,string goblin,string dwarf)
+            {
+                this.SkeletonKind = skeleton;
+                this.GoblinKind = goblin;
+                this.DwarfKind = dwarf;
+            }
+            public String GetSkeletonType()
+            {
+                return this.SkeletonKind;
+            }
+            public string GetGoblinType()
+            {
+                return this.GoblinKind;
+            }
+            public string GetDwarfKind()
+            {
+                return this.DwarfKind;
+            }
+        }
+        public static BaseEnemyKind RandomEnemyKind(RaceKind race)
+        {
+            switch (race)
+            {
+                case RaceKind.Skeleton:
+                    return new BaseEnemyKind();
+                case RaceKind.Dwarf:
+                    return new BaseEnemyKind();
+                case RaceKind.Goblin:
+                    return new BaseEnemyKind();
+                default:
+                    return new BaseEnemyKind();
+            }
         }
     }
 }

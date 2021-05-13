@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
-    class Encounter
+    class Encounter : Menu
     {
         
         public void EncounterEngine()
         {
+            Races.BaseEnemyKind types;
             var Encounterchance = StaticRandom.Instance.Next(1, 101);
-            if (Encounterchance > 75)
+                switch (Encounterchance > 75)
             {
-                foreach (var name in Races.EnemyNPCRaceTypes())
-                {
-                    Console.WriteLine(Races.RaceKindToString(name));
-                }
             }
+            Console.WriteLine(Encounterchance);
+            SelectAction();
         }
     }
 }

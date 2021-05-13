@@ -6,31 +6,34 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
+    public enum CommandKind
+    {
+        Walk,
+        Sit,
+        Sleep,
+        End
+    }
     class Commands
     {
-        public enum CommandKind
-        {
-            Walk,
-            Sit,
-            Sleep
-        }
-        public static String Action(CommandKind command)
+        public static String ActionToString(CommandKind command)
         {
             switch (command)
             {
                 case CommandKind.Walk:
-                    return "You walk thru the forest";
+                    return "You trek thru the forest";
                 case CommandKind.Sit:
                     return "You sit idly for a minute";
                 case CommandKind.Sleep:
                     return "You sleep the day away";
+                case CommandKind.End:
+                    return "You Leave the forest";
                 default:
                     return "Undefined";
             }
         }
-        public static CommandKind StringtoAction(string move)
+        public static CommandKind StringToAction(string walk)
         {
-            switch (move.ToUpper())
+            switch (walk.ToUpper())
             {
                 case "WALK":
                     return CommandKind.Walk;
@@ -38,13 +41,15 @@ namespace Dungeon
                     return CommandKind.Sit;
                 case "SLEEP":
                     return CommandKind.Sleep;
+                case "LEAVE":
+                    return CommandKind.End;
                 default:
                     return CommandKind.Walk;
             }
         }
         public static CommandKind[] GetUsableCommands()
         {
-            return new CommandKind[] { CommandKind.Sit, CommandKind.Sleep, CommandKind.Walk};
+            return new CommandKind[] { CommandKind.Sit, CommandKind.Sleep, CommandKind.Walk, CommandKind.End};
         }
     }
 }

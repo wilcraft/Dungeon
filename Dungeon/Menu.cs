@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dungeon
 {
-    class Menu
+    class Menu : Commands
     {
         public void BeginCreation()
         {
@@ -70,28 +70,34 @@ namespace Dungeon
             {
                 Console.WriteLine(availableaction.ToString());
             }
-            Actions();
+            SelectAction();
         }
-        public void Actions()
+        public void SelectAction()
         {
-            var action = Commands.Action(Commands.StringtoAction(Console.ReadLine().ToUpper()));
-            switch (action)
+            String Input = Console.ReadLine(); ;
+            switch (Input.ToUpper())
             {
                 case "WALK":
-                    Commands.GetUsableCommands(Commands.CommandKind.Sit);
+                    Console.WriteLine(ActionToString(CommandKind.Walk));
+                    SelectAction();
                     break;
                 case "SIT":
-
+                    Console.WriteLine(ActionToString(CommandKind.Sit));
+                    Encounter encounter = new Encounter();
+                    encounter.EncounterEngine();
                     break;
                 case "SLEEP":
-
+                    Console.WriteLine(ActionToString(CommandKind.Sleep));
+                    SelectAction();
+                    break;
+                case "END":
+                    Console.WriteLine(ActionToString(CommandKind.End));
                     break;
                 default:
                     Console.WriteLine("Wrong Input!");
+                    SelectAction();
                     break;
             }
-            //counter encounter = new Encounter();
-            //encounter.EncounterEngine();
         }
     }
 }
