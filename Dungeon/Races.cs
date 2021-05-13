@@ -17,6 +17,22 @@ namespace Dungeon
     }
     class Races
     {
+        public String RaceKindToString(RaceKind race) {
+            switch (race) {
+                case RaceKind.Human:
+                    return "Human";
+                case RaceKind.HalfElf:
+                    return "Half-Elf";
+                case RaceKind.Elf:
+                    return "Elf";
+                case RaceKind.Orc:
+                    return "Orc";
+                case RaceKind.Gnome:
+                    return "Gnome";
+                default:
+                    return "Undefined";
+            }
+        }
         public void GetRacialModifier(RaceKind race) {
             int health;
             int armor;
