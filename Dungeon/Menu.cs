@@ -18,6 +18,7 @@ namespace Dungeon
 
         public void Player()
         {
+            Races Race = new Races();
             String[] PlayerRace = { "Human", "Half-Elf", "Elf", "Orc", "Gnome" };
             foreach (var race in PlayerRace)
             {
@@ -27,10 +28,34 @@ namespace Dungeon
             while (CharacterRace != "N")
             {
                 String Input = Console.ReadLine().ToUpper();
-                var race = Input == "Human" ? Races.Human :
-                    Input == "Half-Elf" ? Races.HalfElf :
-                    Input == "Elf" ? Races.Elf :
-                    Input == "Orc" ? Races.Orc : ;
+                if (Input == "Human")
+                {
+                    Race.Human();
+                }
+                else if (Input == "Half-Elf")
+                {
+                    Race.HalfElf();
+                }
+                else if (Input == "Elf")
+                {
+                    Race.Elf();
+                }
+                else if (Input == "Orc")
+                {
+                    Race.Orc();
+                }
+                else if (Input == "Gnome")
+                {
+                    Race.Gnome();
+                }
+                else if (Input == "N")
+                {
+                    CharacterRace = "N";
+                }
+                //var race = Input == "Human" ? Races.Human :
+                //    Input == "Half-Elf" ? Races.HalfElf :
+                //    Input == "Elf" ? Races.Elf :
+                //    Input == "Orc" ? Races.Orc :;
             }
         }
     }
