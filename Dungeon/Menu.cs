@@ -17,18 +17,14 @@ namespace Dungeon
             Console.Clear();
             var character = Input == "Y" ? "Select a race:" : Input == "N" ? "Farewell." : "";
             Console.WriteLine(character);
-            PlayerCreation();
+            SelectRace();
         }
-        public void PlayerCreation()
+        public void SelectRace()
         {
             foreach (var race in Races.GetPlayableRaces())
             {
                 Console.WriteLine(Races.RaceKindToString(race));
             }
-            SelectRace();
-        }
-        public void SelectRace()
-        {
             String Input = Console.ReadLine().ToUpper();
             Races.RacialModifiers stats;
             switch (Input)
@@ -69,7 +65,7 @@ namespace Dungeon
         }
         public void Adventure()
         {
-            Room rom = new Room("The creepy forest");
+            Room rom = new Room("The creepy forest", "Very creepy indeed.");
             Console.WriteLine($"{rom.ShortDescription}");
             Console.WriteLine("What do you wish to do?\n" +
                               "Walk, Sit, Sleep?");
