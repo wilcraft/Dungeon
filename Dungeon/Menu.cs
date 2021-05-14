@@ -61,21 +61,23 @@ namespace Dungeon
                     break;
             }
             Console.WriteLine($"You have {stats.GetAttackModifier()} attack, {stats.GetArmorModifier()} armor and {stats.GetHealthModifier()} health");
+            Console.Clear();
             Adventure();
         }
         public void Adventure()
         {
-            Room rom = new Room("The creepy forest", "Very creepy indeed.");
-            Console.WriteLine($"{rom.ShortDescription}");
             Console.WriteLine("What do you wish to do?\n" +
                               "Walk, Sit, Sleep?");
             SelectAction();
         }
         public void SelectAction()
         {
+            Player player = new Player();
+            Room rom = new Room("The creepy forest", "Very creepy indeed.");
+            player.TransferEntity(player, rom);
+            Parser parser = new Parser(player);
             while (true) {
                 String Input = Console.ReadLine();
-                Parser parser = new Parser();
                 parser.Parse(Input);
             }
         }
