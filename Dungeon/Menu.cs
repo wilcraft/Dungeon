@@ -65,11 +65,12 @@ namespace Dungeon
                     break;
             }
             Console.WriteLine($"You have {stats.GetAttackModifier()} attack, {stats.GetArmorModifier()} armor and {stats.GetHealthModifier()} health");
-            Console.WriteLine("Your Adventure begins in the creepy forest");
             Adventure();
         }
         public void Adventure()
         {
+            Room rom = new Room("The creepy forest");
+            Console.WriteLine($"{rom.ShortDescription}");
             Console.WriteLine("What do you wish to do?\n" +
                               "Walk, Sit, Sleep?");
             SelectAction();
