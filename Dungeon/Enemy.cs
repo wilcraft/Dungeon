@@ -6,16 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
-    class Enemy
+    class Enemy : Entity
     {
-        private RaceKind race;
 
-        public RaceKind GetRace() {
-            return race;
-        }
-
-        public void SetRace(RaceKind NewRace) {
-            this.race = NewRace;
-        }
     }
 }
