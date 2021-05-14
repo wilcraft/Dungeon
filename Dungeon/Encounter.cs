@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
+    public enum EncounterKind {
+        Common,
+        Elite,
+        Boss
+    }
     class Encounter
     {
         public void EncounterEngine()
