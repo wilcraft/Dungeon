@@ -5,7 +5,7 @@ namespace Dungeon {
     class Parser {
         public void Parse(string prs) {
             string[] Args = prs.Split(" ");
-            Args = Args.Where(x => !IsPreposition(x)).ToArray();
+            Args = Args.Where(x => !IsArticle(x)).ToArray();
             Console.Write("Parsed: ");
             foreach (string arg in Args) {
                 Console.Write($"{arg} ");
@@ -13,7 +13,7 @@ namespace Dungeon {
             Console.Write("\n");
         }
 
-        public bool IsPreposition(string arg) {
+        public bool IsArticle(string arg) {
             if (arg == "the") {
                 return true;
             }
