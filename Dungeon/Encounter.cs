@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dungeon
 {
-    class Encounter : Menu
+    class Encounter
     {
-        
         public void EncounterEngine()
         {
             var Encounterchance = StaticRandom.Instance.Next(1, 101);
