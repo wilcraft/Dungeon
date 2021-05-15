@@ -10,7 +10,7 @@ namespace Dungeon
             Menu menu = new Menu();
             menu.BeginCreation();
         }
-        public void BeginCreation()
+        private void BeginCreation()
         {
             Console.WriteLine("Would you like to create a character? Y/N");
             var Input = Console.ReadLine().ToUpper();
@@ -19,13 +19,13 @@ namespace Dungeon
             Console.WriteLine(character);
             SelectRace();
         }
-        public void SelectRace()
+        private void SelectRace()
         {
             foreach (var race in Races.GetPlayableRaces())
             {
                 Console.WriteLine(Races.RaceKindToString(race));
             }
-            String Input = Console.ReadLine().ToUpper();
+            var Input = Console.ReadLine().ToUpper();
             Races.RacialModifiers stats;
             switch (Input)
             {
@@ -64,13 +64,13 @@ namespace Dungeon
             Console.Clear();
             Adventure();
         }
-        public void Adventure()
+        private void Adventure()
         {
             Console.WriteLine("What do you wish to do?\n" +
                               "Walk, Sit, Sleep?");
             SelectAction();
         }
-        public void SelectAction()
+        private void SelectAction()
         {
             Player player = new Player();
             Room rom = new Room("The creepy forest", "Very creepy indeed.");

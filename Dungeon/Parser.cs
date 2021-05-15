@@ -3,8 +3,8 @@ using System;
 
 namespace Dungeon {
     class Parser {
-        public Commands Commands = new Commands();
-        public Entity player = null;
+        private Commands Commands = new Commands();
+        private readonly Entity player = null;
 
         public Parser(Entity _player) {
             player = _player;
@@ -17,7 +17,7 @@ namespace Dungeon {
             }
         }
 
-        public bool IsArticle(string arg) {
+        private bool IsArticle(string arg) {
             if (arg == "the") {
                 return true;
             }

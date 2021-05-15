@@ -4,9 +4,7 @@ namespace Dungeon {
         private Room _room = null;
 
         public RaceKind Race {
-            get {
-                return _race;
-            }
+            get => _race;
             set {
                 _race = value;
             }

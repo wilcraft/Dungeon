@@ -8,7 +8,7 @@ namespace Dungeon
 {
     class Commands
     {
-        public string[] CommandsList = new string[] {"LOOK"};
+        private readonly string[] CommandsList = new string[] {"LOOK"};
         
         public void CommandHook(string[] args, Entity ent) {
             switch (args[0].ToUpper()) {
@@ -26,7 +26,7 @@ namespace Dungeon
         public void DoWalk() {
             Console.WriteLine("You trek through the forest");
         }
-        public void DoLook(Room env) {
+        private void DoLook(Room env) {
             Console.WriteLine($"{env.ShortDescription}\n{env.LongDescription}");
         }
     }

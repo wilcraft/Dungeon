@@ -16,12 +16,12 @@ namespace Dungeon
     }
     class Races
     {
-        static RaceKind[] PlayableRaces = {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
-        static RaceKind[] EnemyRaces = {RaceKind.Skeleton, RaceKind.Dwarf, RaceKind.Goblin};
-        public struct RacialModifiers {
-            int health;
-            int attack;
-            int armor;
+        static readonly RaceKind[] PlayableRaces = {RaceKind.Human, RaceKind.HalfElf, RaceKind.Elf, RaceKind.Orc, RaceKind.Gnome};
+        static readonly RaceKind[] EnemyRaces = {RaceKind.Skeleton, RaceKind.Dwarf, RaceKind.Goblin};
+        public readonly struct RacialModifiers {
+            private readonly int health;
+            private readonly int attack;
+            private readonly int armor;
 
             public RacialModifiers(int hp, int atk, int arm) {
                 this.health = hp;
@@ -41,7 +41,7 @@ namespace Dungeon
             }
 
         }
-        public static String RaceKindToString(RaceKind race) {
+        public static string RaceKindToString(RaceKind race) {
             switch (race) {
                 case RaceKind.Human:
                     return "Human";
