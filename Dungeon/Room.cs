@@ -1,23 +1,7 @@
 namespace Dungeon {
     class Room {
-        private string _short;
-        private string _long;
-        public string ShortDescription {
-            get {
-                return _short;
-            }
-            set {
-                _short = value;
-            }
-        }
-        public string LongDescription {
-            get {
-                return _long;
-            }
-            set {
-                _long = value;
-            }
-        }
+        public string ShortDescription { get; set; }
+        public string LongDescription { get; set; }
 
         public Room(string shortd, string longd) {
             this.ShortDescription = shortd;
