@@ -24,7 +24,11 @@ namespace Dungeon
             Console.WriteLine("You trek through the forest");
         }
         private void DoLook(Room env) {
-            Console.WriteLine($"{env.ShortDescription}\n{env.LongDescription}");
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine($"{env.ShortDescription}\n");
+            Console.ResetColor();
+            Console.WriteLine($"{env.LongDescription}");
         }
 
         private void DoLookAt(Entity ent)
