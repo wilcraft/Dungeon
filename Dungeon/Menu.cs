@@ -17,6 +17,7 @@ namespace Dungeon
             Console.WriteLine(character);
             SelectRace();
         }
+        
         private void SelectRace()
         {
             foreach (var race in Races.GetPlayableRaces())
@@ -71,7 +72,7 @@ namespace Dungeon
         private void SelectAction()
         {
             Player player = new Player();
-            Room rom = new Room("The creepy forest", "Very creepy indeed.");
+            Room rom = Database.LoadRooms()[0];
             player.TransferEntity(player, rom);
             Parser parser = new Parser(player);
             while (true) {
